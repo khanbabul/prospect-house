@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta property="og:site_name" content="Prospect House">
-  <meta property="og:title" content="Prospect House | Babul Khan">
-  <meta property="og:description" content="All-Inclusive Estimate Builder">
+  <meta property="og:site_name" content="PH Coming Soon | Babul Khan">
+  <meta property="og:title" content="PH Coming Soon | Babul Khan">
+  <meta property="og:description" content="All-Inclusive Estimate Tool Coming Soon">
   <meta property="og:image" content="https://prospecthousetx.vercel.app/live.jpg">
-  <title>Prospect House | Babul Khan</title>
-  <!-- Favicons -->
-  <link href="./icon.jpg" rel="icon">
-  <link href="./icon.jpg" rel="apple-touch-icon">
+  <title>PH Coming Soon | Babul Khan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -19,848 +17,299 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* background: linear-gradient(135deg, #000000 0%, #764ba2 100%), url(./landscape.jpg) !important; */
-            background: url(./landscape.jpg) no-repeat center center fixed;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #faf9f7;
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+
+        /* Background Image with Overlay */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
-            min-height: 100vh;
-            padding: 20px;
-            font-family: 'mulish', sans-serif;
-        }
-
-         .nav-img {
-            width: 100%;
-            /* max-width: 1200px; */
-            margin: 0 auto 20px auto;
-            display: block;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-
-        .header {
-            background-image: linear-gradient(to bottom, rgba(256, 256, 256, 0.52), rgb(237, 221, 216, 0.73)), url('./header.jpg');
-            /* background: linear-gradient(135deg, #000000 0%, #764ba2 100%); */
-            color: black;
-            padding: 30px;
-            text-align: center;
-            font-family: 'mulish';
-            text-transform: uppercase;
-            font-weight: normal;
-        }
-
-        .header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            font-weight: 400;
-        }
-
-        .header p {
-            font-size: 0.95em;
-            opacity: 0.9;
-        }
-
-        .content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            padding: 40px;
-        }
-
-        .input-section {
-            border-right: 2px solid #e0e0e0;
-            padding-right: 30px;
-        }
-
-        .output-section {
-            padding-left: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #333;
-            font-size: 0.95em;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: all 0.3s;
-            background: #f9f9f9;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #000000;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .form-group input[type="number"] {
-            -moz-appearance: textfield;
-        }
-
-        .form-group input[type="number"]::-webkit-outer-spin-button,
-        .form-group input[type="number"]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        .optional-group {
-            background: rgb(235, 236, 240);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-
-        .optional-group .form-group:last-child {
-            margin-bottom: 0;
-        }
-
-        .section-title {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: #000000;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #000000;
-        }
-
-        .summary-item {
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 0.95em;
+            align-items: center;
+            justify-content: center;
         }
 
-        .summary-item:last-child {
-            border-bottom: none;
-        }
-
-        .summary-item .label {
-            color: #666;
-            font-weight: 500;
-        }
-
-        .summary-item .value {
-            color: #333;
-            font-weight: 600;
-        }
-
-        .summary-section {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .total-section {
-            background: #EDDDD8;
-            color: black;
-            padding: 25px;
-            text-align: center;
-            margin-top: 30px;
-            border: 2px solid black;
-            font-weight: 300;
-        }
-
-        .total-section:hover{
-            background: white;
-            /* border: none; */
-            transition: 200ms !important;
-            cursor: pointer;
-        }
-
-        .total-section .total-label {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            opacity: 0.9;
-        }
-
-        .total-section .total-value {
-            font-size: 2.5em;
-            font-weight: 300;
-        }
-
-        .submit-btn {
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            padding: 15px;
-            background: #EDDDD8;
-            color: black;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(2px);
+        }
+
+        /* Main Content Container */
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px;
+            max-width: 800px;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 20px;
-            font-family: 'mulish';
-        }
-
-        .submit-btn:hover {
-            /* transform: translateY(-2px); */
-            /* box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3); */
-            font-weight: 400;
-            transition: 600ms !important;
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-
-        .note {
-            background: #EDDDD8;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 4px solid rgb(235, 236, 240);
-            font-size: 0.9em;
             color: black;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
         }
 
-        .validation-check {
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #6b7c6b;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .construction-box {
+            border: 1px solid #d4d4d4;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .construction-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #EDDDD8;
+            margin: 30px auto;
+        }
+
+        .construction-text {
+            font-size: 0.9rem;
+            line-height: 2;
+            color: #666;
+            letter-spacing: 0.05em;
+            font-weight: 300;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 45, 0.4);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: #ffffff;
+            padding: 60px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transform: scale(0.9) translateY(20px);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.5rem;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .modal-close:hover {
+            color: #EDDDD8;
+            background: #f5f5f5;
+        }
+
+        .modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: black;
+            margin-bottom: 25px;
+            letter-spacing: 0.1em;
+        }
+
+        .modal-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .contact-btn {
             display: inline-block;
-            padding: 4px 10px;
-            border-radius: 5px;
-            font-size: 0.85em;
-            font-weight: 600;
+            padding: 15px 40px;
+            background: #EDDDD8;
+            color: black;
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid #EDDDD8;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        .validation-ok {
-            background: rgba(0, 0, 0, 0.1);
+        .contact-btn:hover {
+            background: transparent;
             color: #000;
         }
 
-        .validation-error {
-            background: #f8d7da;
-            color: #721c24;
+        /* Decorative Elements */
+        .leaf-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.1;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EDDDD8'%3E%3Cpath d='M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
-        @media (max-width: 968px) {
-            .content {
-                grid-template-columns: 1fr;
-            }
+        .leaf-1 { top: 10%; left: 5%; transform: rotate(45deg); }
+        .leaf-2 { bottom: 10%; right: 5%; transform: rotate(-45deg); }
 
-            .input-section {
-                border-right: none;
-                padding-right: 0;
-                border-bottom: 2px solid #e0e0e0;
-                padding-bottom: 30px;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-
-            .output-section {
-                padding-left: 0;
-                padding-top: 30px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        .small-text {
-            font-size: 0.85em;
-            color: #666;
-            margin-top: 5px;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo { font-size: 2rem; }
+            .construction-title { font-size: 1.8rem; }
+            .modal { padding: 40px 30px; }
+            .construction-box { padding: 40px 20px; }
         }
     </style>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
-     <img src="./nav.png" alt="" class="nav-img">
-    <div class="container">
-        <div class="header">
-            <h1>Prospect House All-Inclusive Estimate Builder</h1>
-            <p>Fill in the fields below. All calculations update automatically.</p>
-            <p style="font-size: 0.9em; margin-top: 5px;">(Off-Peak dates receive 10% off bar packages; Saturdays excluded)</p>
+
+    <!-- Background Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        
+        <!-- Decorative Leaves -->
+        <div class="leaf-decoration leaf-1"></div>
+        <div class="leaf-decoration leaf-2"></div>
+
+        <div class="container">
+            <h1 class="logo">Prospect House</h1>
+            <p class="tagline">All-Inclusive Estimate Tool made by Babul Khan</p>
+            
+            <div class="construction-box">
+                <h2 class="construction-title">Under Construction</h2>
+                <div class="divider"></div>
+                <p class="construction-text">
+                    I am currently crafting something beautiful.<br>
+                    The updated tool will be launching soon.<br>
+                    Thank you for your patience.
+                </p>
+            </div>
         </div>
+    </section>
 
-        <div class="content">
-            <!-- Input Section -->
-            <div class="input-section">
-                <div class="section-title">Event Details</div>
-
-                <div class="form-group">
-                    <label for="season">Season *</label>
-                    <select id="season" required>
-                        <option value="">Select Season</option>
-                        <option value="Peak">Peak</option>
-                        <option value="Mid">Mid</option>
-                        <option value="Off-Peak">Off-Peak</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="eventDate">Event Date *</label>
-                    <input type="date" id="eventDate" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="dayType">Day Type (for venue pricing) *</label>
-                    <select id="dayType" required>
-                        <option value="">Select Day Type</option>
-                        <option value="Mon–Wed">Mon–Wed</option>
-                        <option value="Thu">Thu</option>
-                        <option value="Fri">Fri</option>
-                        <option value="Sat/Holiday">Sat/Holiday</option>
-                        <option value="Sun">Sun</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="guestCount">Guest Count *</label>
-                    <select id="guestCount" required>
-                        <option value="">Select Guest Count</option>
-                        <option value="50">50</option>
-                        <option value="75">75</option>
-                        <option value="100">100</option>
-                        <option value="125">125</option>
-                        <option value="150">150</option>
-                        <option value="175">175</option>
-                        <option value="200">200</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="barHours">Bar Hours *</label>
-                    <select id="barHours" required>
-                        <option value="">Select Bar Hours</option>
-                        <option value="4">4</option>
-                        <option value="4.5">4.5</option>
-                        <option value="5">5</option>
-                        <option value="5.5">5.5</option>
-                        <option value="6">6</option>
-                    </select>
-                </div>
-
-                <div class="optional-group">
-                    <label style="font-weight: 700; margin-bottom: 15px; display: block;">Guest Breakdown (Optional)</label>
-                    
-                    <div class="form-group">
-                        <label for="adults21">Adults 21+ (optional)</label>
-                        <input type="number" id="adults21" min="0" placeholder="Leave blank to use total guest count">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="youth620">Youth 6-20 (optional)</label>
-                        <input type="number" id="youth620" min="0" placeholder="0">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="kids5">Kids <5 (optional)</label>
-                        <input type="number" id="kids5" min="0" placeholder="0">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="barPackage">Bar Package *</label>
-                    <select id="barPackage" required>
-                        <option value="">Select Bar Package</option>
-                        <option value="Premium Full Bar">Premium Full Bar</option>
-                        <option value="Signature Bar">Signature Bar</option>
-                        <option value="Classic Bar">Classic Bar</option>
-                        <option value="Beer & Wine">Beer & Wine</option>
-                        <option value="Non-Alcoholic">Non-Alcoholic</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="cateringStyle">Catering Style *</label>
-                    <select id="cateringStyle" required>
-                        <option value="">Select Catering Style</option>
-                        <option value="Standard Buffet">Standard Buffet</option>
-                        <option value="Hill Country Buffet">Hill Country Buffet</option>
-                        <option value="Family Style">Family Style</option>
-                        <option value="Plated">Plated</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="djOption">DJ Option *</label>
-                    <select id="djOption" required>
-                        <option value="">Select DJ Option</option>
-                        <option value="Premier Entertainment - Prospect House Package">Premier Entertainment - Prospect House Package</option>
-                        <option value="Byrne Rock - Ceremony & Reception Package">Byrne Rock - Ceremony & Reception Package</option>
-                    </select>
-                </div>
-
-                <div class="section-title" style="margin-top: 30px;">Floral Centerpiece Add-Ons (Optional)</div>
-
-                <div class="form-group">
-                    <label for="centerpieceStyle">Centerpiece Style</label>
-                    <select id="centerpieceStyle">
-                        <option value="">None</option>
-                        <option value="Trio of Candles w/ Greenery">Trio of Candles w/ Greenery ($95)</option>
-                        <option value="Six Bud Vases (Seasonal Florals)">Six Bud Vases (Seasonal Florals) ($100)</option>
-                        <option value="Petite Compotes">Petite Compotes ($125)</option>
-                        <option value="Low & Lush Arrangement">Low & Lush Arrangement ($185)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="centerpieceQty">Quantity</label>
-                    <input type="number" id="centerpieceQty" min="0" max="1000" placeholder="0">
-                    <div class="small-text">Recommended: 1 centerpiece per table of 8 guests for events over 125 guests</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="remarks">Remarks / Special Requests</label>
-                    <textarea id="remarks" rows="4" placeholder="Enter any special requests or notes..."></textarea>
-                </div>
-
-                <button type="button" class="submit-btn" onclick="submitForm()">Submit Estimate Request</button>
-            </div>
-
-            <!-- Output Section -->
-            <div class="output-section">
-                <div class="section-title">Estimate Summary</div>
-
-                <div class="note">
-                    <strong>Guest Count Validation:</strong> 
-                    <span id="guestValidation" class="validation-check validation-ok">OK</span>
-                </div>
-
-                <div class="summary-section">
-                    <h3 style="margin-bottom: 15px; color: #000000;">Pricing Breakdown</h3>
-                    
-                    <div class="summary-item">
-                        <span class="label">Venue Rental</span>
-                        <span class="value" id="venueRental">$0.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Planning Package</span>
-                        <span class="value" id="planning">$3,500.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Bar Total (after minimum)</span>
-                        <span class="value" id="barTotal">$0.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Catering Total</span>
-                        <span class="value" id="cateringTotal">$0.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Rentals Total</span>
-                        <span class="value" id="rentalsTotal">$0.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Floral Total</span>
-                        <span class="value" id="floralTotal">$0.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">DJ Total</span>
-                        <span class="value" id="djTotal">$0.00</span>
-                    </div>
-                </div>
-
-                <div class="summary-section" style="background: rgb(235, 236, 240);">
-                    <h3 style="margin-bottom: 15px; color: #000000;">Detailed Calculations</h3>
-                    
-                    <div class="summary-item">
-                        <span class="label">Total Guest Count (Bar)</span>
-                        <span class="value" id="totalGuestBar">0</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Bar Rate ($/adult/hr)</span>
-                        <span class="value" id="barRate">$0.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Bar Subtotal (adults)</span>
-                        <span class="value" id="barSubtotal">$0.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Youth Fee</span>
-                        <span class="value" id="youthFee">$0.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Bar Before Minimum</span>
-                        <span class="value" id="barBeforeMin">$0.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Bar Minimum</span>
-                        <span class="value" id="barMinimum">$0.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Floral Tier</span>
-                        <span class="value" id="floralTier">-</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Floral Base</span>
-                        <span class="value" id="floralBase">$0.00</span>
-                    </div>
-                    
-                    <div class="summary-item">
-                        <span class="label">Floral Add-Ons</span>
-                        <span class="value" id="floralAddOns">$0.00</span>
-                    </div>
-                </div>
-
-                <div class="total-section">
-                    <div class="total-label">Estimated Total</div>
-                    <div class="total-value" id="estimatedTotal">$0.00</div>
-                </div>
-            </div>
+    <!-- Popup Modal -->
+    <div class="modal-overlay" id="popupModal">
+        <div class="modal">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 class="modal-title">Hey Matt and PH Team</h3>
+            <p class="modal-text">
+                I hope you're doing well. You may think it is getting late in such a small change in the form, It is basically a small but a bit Technical update so I have to make sure everything else is remains untouched and works fine so Form doesn't loses it's core feature and thus it is taking me some time. I will make sure everything works fine and will give you a really nice finalized output on Thursday in the Evening for you to check how it is working and we will then cover a call as well with all Team including.
+Since it's been some days so I thought to keep you updated that work is being in the process in the background. Thankyou for your support and co-operation. <br> ~Babul Khan
+            </p>
+            <a href="https://wa.me/923483295716" class="contact-btn">Message Me if you have any queries</a>
         </div>
     </div>
 
     <script>
-        // Pricing Data
-        const PRICING_DATA = {
-            venue: {
-                'Peak|Mon–Wed': 3500,
-                'Peak|Thu': 4500,
-                'Peak|Fri': 8000,
-                'Peak|Sat/Holiday': 9000,
-                'Peak|Sun': 6000,
-                'Mid|Mon–Wed': 3500,
-                'Mid|Thu': 4500,
-                'Mid|Fri': 6500,
-                'Mid|Sat/Holiday': 7500,
-                'Mid|Sun': 5500,
-                'Off-Peak|Mon–Wed': 3000,
-                'Off-Peak|Thu': 4000,
-                'Off-Peak|Fri': 5500,
-                'Off-Peak|Sat/Holiday': 6500,
-                'Off-Peak|Sun': 4500
-            },
-            barPackages: {
-                'Premium Full Bar': 16,
-                'Signature Bar': 11,
-                'Classic Bar': 9,
-                'Beer & Wine': 7,
-                'Non-Alcoholic': 6
-            },
-            barMinimums: {
-                'Mon-Wed': 2000,
-                'Thu-Fri-Sun': 3000,
-                'Sat-Holiday': 4500
-            },
-            catering: {
-                50: { 'Standard Buffet': 3694.84, 'Hill Country Buffet': 5026.32, 'Family Style': 5991.64, 'Plated': 7323.11 },
-                75: { 'Standard Buffet': 4527.02, 'Hill Country Buffet': 6524.23, 'Family Style': 7655.98, 'Plated': 8987.46 },
-                100: { 'Standard Buffet': 5359.19, 'Hill Country Buffet': 8022.14, 'Family Style': 9986.06, 'Plated': 11317.54 },
-                125: { 'Standard Buffet': 6590.8, 'Hill Country Buffet': 9852.92, 'Family Style': 11716.98, 'Plated': 13048.46 },
-                150: { 'Standard Buffet': 7356.4, 'Hill Country Buffet': 11350.82, 'Family Style': 13980.49, 'Plated': 15311.96 },
-                175: { 'Standard Buffet': 8521.44, 'Hill Country Buffet': 13181.6, 'Family Style': 15644.83, 'Plated': 17642.04 },
-                200: { 'Standard Buffet': 9686.48, 'Hill Country Buffet': 15012.38, 'Family Style': 17974.91, 'Plated': 19972.13 }
-            },
-            rentals: {
-                75: 1880.04,
-                100: 2119.82,
-                125: 2359.62,
-                150: 2599.40,
-                175: 2839.19,
-                200: 3078.99
-            },
-            dj: {
-                'Premier Entertainment - Prospect House Package': 1600,
-                'Byrne Rock - Ceremony & Reception Package': 1575
-            },
-            centerpieces: {
-                'Trio of Candles w/ Greenery': 95,
-                'Six Bud Vases (Seasonal Florals)': 100,
-                'Petite Compotes': 125,
-                'Low & Lush Arrangement': 185,
-                'None': 0
-            },
-            youthFee: 7,
-            planning: 3500
-        };
-
-        // Utility function to format currency
-        function formatCurrency(amount) {
-            return '$' + amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        }
-
-        // Calculate everything
-        function calculate() {
-            const season = document.getElementById('season').value;
-            const dayType = document.getElementById('dayType').value;
-            const guestCount = parseInt(document.getElementById('guestCount').value) || 0;
-            const barHours = parseFloat(document.getElementById('barHours').value) || 0;
-            const adults21 = parseInt(document.getElementById('adults21').value) || guestCount;
-            const youth620 = parseInt(document.getElementById('youth620').value) || 0;
-            const kids5 = parseInt(document.getElementById('kids5').value) || 0;
-            const barPackage = document.getElementById('barPackage').value;
-            const cateringStyle = document.getElementById('cateringStyle').value;
-            const djOption = document.getElementById('djOption').value;
-            const centerpieceStyle = document.getElementById('centerpieceStyle').value;
-            const centerpieceQty = parseInt(document.getElementById('centerpieceQty').value) || 0;
-            const eventDate = document.getElementById('eventDate').value;
-
-            // Calculate total guest count for bar
-            const totalGuestBar = adults21 + youth620 + kids5;
-            document.getElementById('totalGuestBar').textContent = totalGuestBar;
-
-            // Validate guest count
-            const validationEl = document.getElementById('guestValidation');
-            if (totalGuestBar === guestCount || guestCount === 0) {
-                validationEl.textContent = 'OK';
-                validationEl.className = 'validation-check validation-ok';
-            } else {
-                validationEl.textContent = 'CHECK - Total does not match';
-                validationEl.className = 'validation-check validation-error';
-            }
-
-            // Calculate Venue Rental
-            const venueKey = `${season}|${dayType}`;
-            const venueRental = PRICING_DATA.venue[venueKey] || 0;
-            document.getElementById('venueRental').textContent = formatCurrency(venueRental);
-
-            // Planning is fixed
-            document.getElementById('planning').textContent = formatCurrency(PRICING_DATA.planning);
-
-            // Calculate Bar Rate
-            const barRate = PRICING_DATA.barPackages[barPackage] || 0;
-            document.getElementById('barRate').textContent = formatCurrency(barRate);
-
-            // Calculate Bar Subtotal (with discount for off-peak, but not Sat/Holiday)
-            let barDiscount = 1.0;
-            if (season === 'Off-Peak' && dayType !== 'Sat/Holiday') {
-                barDiscount = 0.9; // 10% off
-            }
-            const barSubtotal = adults21 * barHours * barRate * barDiscount;
-            document.getElementById('barSubtotal').textContent = formatCurrency(barSubtotal);
-
-            // Calculate Youth Fee
-            const youthFee = youth620 * PRICING_DATA.youthFee;
-            document.getElementById('youthFee').textContent = formatCurrency(youthFee);
-
-            // Bar Before Minimum
-            const barBeforeMin = barSubtotal + youthFee;
-            document.getElementById('barBeforeMin').textContent = formatCurrency(barBeforeMin);
-
-            // Calculate Bar Minimum based on day of week
-            // Excel WEEKDAY mode 2: Mon=1, Tue=2, Wed=3, Thu=4, Fri=5, Sat=6, Sun=7
-            let barMinimum = 0;
-            if (eventDate) {
-                const date = new Date(eventDate);
-                let dayOfWeek = date.getDay(); // JavaScript: 0=Sun, 1=Mon, ... 6=Sat
-                
-                // Convert to Excel WEEKDAY mode 2: Mon=1, Tue=2, ..., Sun=7
-                let excelWeekday = dayOfWeek === 0 ? 7 : dayOfWeek;
-                
-                // Handle Excel's 1900 date bug (1900-01-01 is treated as Sunday in Excel)
-                if (date.getFullYear() === 1900 && date.getMonth() === 0 && date.getDate() === 1) {
-                    excelWeekday = 7; // Excel thinks 1900-01-01 is Sunday
-                }
-                
-                // Formula: IF(OR(WEEKDAY=1,2,3), 2000, IF(OR(WEEKDAY=4,5,7), 3000, 4500))
-                if (excelWeekday >= 1 && excelWeekday <= 3) { // Mon-Wed
-                    barMinimum = PRICING_DATA.barMinimums['Mon-Wed'];
-                } else if (excelWeekday === 4 || excelWeekday === 5 || excelWeekday === 7) { // Thu, Fri, Sun
-                    barMinimum = PRICING_DATA.barMinimums['Thu-Fri-Sun'];
-                } else { // Sat (6) or Holiday
-                    barMinimum = PRICING_DATA.barMinimums['Sat-Holiday'];
-                }
-            }
-            document.getElementById('barMinimum').textContent = formatCurrency(barMinimum);
-
-            // Bar Total (max of before minimum or minimum)
-            const barTotal = Math.max(barBeforeMin, barMinimum);
-            document.getElementById('barTotal').textContent = formatCurrency(barTotal);
-
-            // Calculate Catering Total
-            const cateringTotal = PRICING_DATA.catering[guestCount]?.[cateringStyle] || 0;
-            document.getElementById('cateringTotal').textContent = formatCurrency(cateringTotal);
-
-            // Calculate Rentals Total (using VLOOKUP logic - find closest match)
-            let rentalsTotal = 0;
-            if (guestCount >= 75) {
-                const rentalKeys = Object.keys(PRICING_DATA.rentals).map(Number).sort((a, b) => a - b);
-                for (let i = rentalKeys.length - 1; i >= 0; i--) {
-                    if (guestCount >= rentalKeys[i]) {
-                        rentalsTotal = PRICING_DATA.rentals[rentalKeys[i]];
-                        break;
-                    }
-                }
-            }
-            document.getElementById('rentalsTotal').textContent = formatCurrency(rentalsTotal);
-
-            // Calculate Floral Tier
-            let floralTier = '';
-            let floralBase = 0;
-            if (guestCount >= 100) {
-                floralTier = 'Tier 3';
-                floralBase = 6000;
-            } else if (guestCount >= 75) {
-                floralTier = 'Tier 2';
-                floralBase = 5500;
-            } else if (guestCount >= 50) {
-                floralTier = 'Tier 1';
-                floralBase = 4500;
-            } else if (guestCount > 0) {
-                floralTier = 'Below Minimum';
-                floralBase = 0;
-            }
-            document.getElementById('floralTier').textContent = floralTier || '-';
-            document.getElementById('floralBase').textContent = formatCurrency(floralBase);
-
-            // Calculate Centerpiece Add-Ons
-            const centerpiecePrice = PRICING_DATA.centerpieces[centerpieceStyle] || 0;
-            const floralAddOns = centerpiecePrice * centerpieceQty;
-            document.getElementById('floralAddOns').textContent = formatCurrency(floralAddOns);
-
-            // Floral Total
-            const floralTotal = floralBase + floralAddOns;
-            document.getElementById('floralTotal').textContent = formatCurrency(floralTotal);
-
-            // Calculate DJ Total
-            const djTotal = PRICING_DATA.dj[djOption] || 0;
-            document.getElementById('djTotal').textContent = formatCurrency(djTotal);
-
-            // Calculate Estimated Total
-            const estimatedTotal = venueRental + PRICING_DATA.planning + barTotal + cateringTotal + rentalsTotal + floralTotal + djTotal;
-            document.getElementById('estimatedTotal').textContent = formatCurrency(estimatedTotal);
-        }
-
-        // Submit form
-        function submitForm() {
-            // Validate required fields
-            const requiredFields = ['season', 'eventDate', 'dayType', 'guestCount', 'barHours', 'barPackage', 'cateringStyle', 'djOption'];
-            let isValid = true;
-            
-            for (const fieldId of requiredFields) {
-                const field = document.getElementById(fieldId);
-                if (!field.value) {
-                    field.style.borderColor = '#dc3545';
-                    isValid = false;
-                } else {
-                    field.style.borderColor = '#e0e0e0';
-                }
-            }
-
-            if (!isValid) {
-                alert('Please fill in all required fields (marked with *)');
-                return;
-            }
-
-            // Get validation status
-            const validationEl = document.getElementById('guestValidation');
-            const validationStatus = validationEl.textContent;
-
-            // Collect form data including all calculated values
-            const formData = {
-                // Input fields
-                season: document.getElementById('season').value,
-                eventDate: document.getElementById('eventDate').value,
-                dayType: document.getElementById('dayType').value,
-                guestCount: document.getElementById('guestCount').value,
-                barHours: document.getElementById('barHours').value,
-                adults21: document.getElementById('adults21').value || document.getElementById('guestCount').value,
-                youth620: document.getElementById('youth620').value || '0',
-                kids5: document.getElementById('kids5').value || '0',
-                barPackage: document.getElementById('barPackage').value,
-                cateringStyle: document.getElementById('cateringStyle').value,
-                djOption: document.getElementById('djOption').value,
-                centerpieceStyle: document.getElementById('centerpieceStyle').value || 'None',
-                centerpieceQty: document.getElementById('centerpieceQty').value || '0',
-                remarks: document.getElementById('remarks').value,
-                
-                // Calculated values
-                totalGuestBar: document.getElementById('totalGuestBar').textContent,
-                validationStatus: validationStatus,
-                venueRental: document.getElementById('venueRental').textContent,
-                planning: document.getElementById('planning').textContent,
-                barRate: document.getElementById('barRate').textContent,
-                barSubtotal: document.getElementById('barSubtotal').textContent,
-                youthFee: document.getElementById('youthFee').textContent,
-                barBeforeMin: document.getElementById('barBeforeMin').textContent,
-                barMinimum: document.getElementById('barMinimum').textContent,
-                barTotal: document.getElementById('barTotal').textContent,
-                cateringTotal: document.getElementById('cateringTotal').textContent,
-                rentalsTotal: document.getElementById('rentalsTotal').textContent,
-                floralTier: document.getElementById('floralTier').textContent,
-                floralBase: document.getElementById('floralBase').textContent,
-                floralAddOns: document.getElementById('floralAddOns').textContent,
-                floralTotal: document.getElementById('floralTotal').textContent,
-                djTotal: document.getElementById('djTotal').textContent,
-                estimatedTotal: document.getElementById('estimatedTotal').textContent
-            };
-
-            // Disable submit button and show loading state
-            const submitBtn = document.querySelector('.submit-btn');
-            const originalBtnText = submitBtn.textContent;
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.style.opacity = '0.6';
-
-            // Send data to PHP backend
-            fetch('send-estimate.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Re-enable button
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
-                submitBtn.style.opacity = '1';
-
-                if (data.success) {
-                    alert('✓ ' + data.message);
-                    // Optionally reset form or redirect
-                    // window.location.reload();
-                } else {
-                    alert('✗ ' + data.message);
-                }
-            })
-            .catch(error => {
-                // Re-enable button
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
-                submitBtn.style.opacity = '1';
-
-                console.error('Error:', error);
-                alert('✗ An error occurred while sending the estimate. Please try again.\n\nError details: ' + error.message);
-            });
-        }
-
-        // Add event listeners to all inputs
-        const inputs = document.querySelectorAll('input, select, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('change', calculate);
-            input.addEventListener('input', calculate);
+        // Show modal when page loads
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('popupModal').classList.add('active');
+            }, 500); // Slight delay for better UX
         });
 
-        // Initial calculation
-        calculate();
+        // Close modal function
+        function closeModal() {
+            document.getElementById('popupModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('popupModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
     </script>
+
 </body>
 </html>
