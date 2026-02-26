@@ -1,315 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta property="og:site_name" content="PH Coming Soon | Babul Khan">
-  <meta property="og:title" content="PH Coming Soon | Babul Khan">
-  <meta property="og:description" content="All-Inclusive Estimate Tool Coming Soon">
-  <meta property="og:image" content="https://prospecthousetx.vercel.app/live.jpg">
-  <title>PH Coming Soon | Babul Khan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #faf9f7;
-            color: #4a4a4a;
-            overflow-x: hidden;
-        }
-
-        /* Background Image with Overlay */
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(2px);
-        }
-
-        /* Main Content Container */
-        .container {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 40px;
-            max-width: 800px;
-        }
-
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            font-weight: 300;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: black;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            color: #6b7c6b;
-            margin-bottom: 40px;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.3s forwards;
-        }
-
-        .construction-box {
-            border: 1px solid #d4d4d4;
-            padding: 60px 40px;
-            background: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.6s forwards;
-        }
-
-        .construction-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #000;
-            margin-bottom: 20px;
-        }
-
-        .divider {
-            width: 60px;
-            height: 1px;
-            background: #EDDDD8;
-            margin: 30px auto;
-        }
-
-        .construction-text {
-            font-size: 0.9rem;
-            line-height: 2;
-            color: #666;
-            letter-spacing: 0.05em;
-            font-weight: 300;
-        }
-
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(44, 62, 45, 0.4);
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.5s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal {
-            background: #ffffff;
-            padding: 60px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            transform: scale(0.9) translateY(20px);
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .modal-overlay.active .modal {
-            transform: scale(1) translateY(0);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 1.5rem;
-            color: #999;
-            cursor: pointer;
-            transition: color 0.3s;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-
-        .modal-close:hover {
-            color: #EDDDD8;
-            background: #f5f5f5;
-        }
-
-        .modal-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-weight: 400;
-            color: black;
-            margin-bottom: 25px;
-            letter-spacing: 0.1em;
-        }
-
-        .modal-text {
-            font-size: 0.95rem;
-            line-height: 1.8;
-            color: #666;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #EDDDD8;
-            color: black;
-            text-decoration: none;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            border: 1px solid #EDDDD8;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .contact-btn:hover {
-            background: transparent;
-            color: #000;
-        }
-
-        /* Decorative Elements */
-        .leaf-decoration {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            opacity: 0.1;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EDDDD8'%3E%3Cpath d='M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z'/%3E%3C/svg%3E");
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-
-        .leaf-1 { top: 10%; left: 5%; transform: rotate(45deg); }
-        .leaf-2 { bottom: 10%; right: 5%; transform: rotate(-45deg); }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .logo { font-size: 2rem; }
-            .construction-title { font-size: 1.8rem; }
-            .modal { padding: 40px 30px; }
-            .construction-box { padding: 40px 20px; }
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta property="og:site_name" content="Prospect House">
+    <meta property="og:title" content="Prospect House | Babul Khan">
+    <meta property="og:description" content="All-Inclusive Estimate Builder">
+    <meta property="og:image" content="https://prospecthousetx.vercel.app/live.jpg">
+    <title>Prospect House | Babul Khan</title>
+    <!-- Favicons -->
+    <link href="./icon.jpg" rel="icon">
+    <link href="./icon.jpg" rel="apple-touch-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+<base target="_blank">
 </head>
+
 <body>
-
-    <!-- Background Section -->
-    <section class="hero-section">
-        <div class="hero-overlay"></div>
-        
-        <!-- Decorative Leaves -->
-        <div class="leaf-decoration leaf-1"></div>
-        <div class="leaf-decoration leaf-2"></div>
-
-        <div class="container">
-            <h1 class="logo">Prospect House</h1>
-            <p class="tagline">All-Inclusive Estimate Tool made by Babul Khan</p>
-            
-            <div class="construction-box">
-                <h2 class="construction-title">Under Construction</h2>
-                <div class="divider"></div>
-                <p class="construction-text">
-                    I am currently crafting something beautiful.<br>
-                    The updated tool will be launching soon.<br>
-                    Thank you for your patience.
-                </p>
-            </div>
+    <div class="container">
+        <div class="header">
+            <h1>Prospect House All-Inclusive Estimate Builder</h1>
+            <p>Fill in the fields below. All calculations update automatically.</p>
+            <p style="font-size: 0.9em; margin-top: 5px;">(Off-Peak dates receive 10% off bar packages; Saturdays
+                excluded)</p>
         </div>
-    </section>
 
-    <!-- Popup Modal -->
-    <div class="modal-overlay" id="popupModal">
-        <div class="modal">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h3 class="modal-title">Hey Matt and PH Team</h3>
-            <p class="modal-text">
-                I hope you're doing well. You may think it is getting late in such a small change in the form, It is basically a small but a bit Technical update so I have to make sure everything else is remains untouched and works fine so Form doesn't loses it's core feature and thus it is taking me some time. I will make sure everything works fine and will give you a really nice finalized output on Thursday in the Evening for you to check how it is working and we will then cover a call as well with all Team including.
-Since it's been some days so I thought to keep you updated that work is being in the process in the background. Thankyou for your support and co-operation. <br> ~Babul Khan
-            </p>
-            <a href="https://wa.me/923483295716" class="contact-btn">Message Me if you have any queries</a>
+        <div class="content">
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="section-title">Event Details</div>
+
+                <div class="form-group">
+                    <label for="eventDate">Event Date *</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="season">Season</label>
+                    <input type="text" id="season" readonly placeholder="Auto-populated from date">
+                </div>
+
+                <div class="form-group">
+                    <label for="dayType">Day Type (for venue pricing)</label>
+                    <input type="text" id="dayType" readonly placeholder="Auto-populated from date">
+                </div>
+
+                <div class="form-group">
+                    <label for="guestCount">Guest Count *</label>
+                    <select id="guestCount" required>
+                        <option value="">Select Guest Count</option>
+                        <option value="50">50</option>
+                        <option value="75">75</option>
+                        <option value="100">100</option>
+                        <option value="125">125</option>
+                        <option value="150">150</option>
+                        <option value="175">175</option>
+                        <option value="200">200</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="barHours">Bar Hours *</label>
+                    <select id="barHours" required>
+                        <option value="">Select Bar Hours</option>
+                        <option value="4">4</option>
+                        <option value="4.5">4.5</option>
+                        <option value="5">5</option>
+                        <option value="5.5">5.5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+
+                <div class="optional-group">
+                    <label style="font-weight: 700; margin-bottom: 15px; display: block;">Guest Breakdown
+                        (Optional)</label>
+
+                    <div class="form-group">
+                        <label for="adults21">Adults 21+ (optional)</label>
+                        <input type="number" id="adults21" min="0" placeholder="Leave blank to use total guest count">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="youth620">Youth 6-20 (optional)</label>
+                        <input type="number" id="youth620" min="0" placeholder="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kids5">Kids <5 (optional)</label>
+                                <input type="number" id="kids5" min="0" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="barPackage">Bar Package *</label>
+                    <select id="barPackage" required>
+                        <option value="">Select Bar Package</option>
+                        <option value="Premium Full Bar">Premium Full Bar</option>
+                        <option value="Signature Bar">Signature Bar</option>
+                        <option value="Classic Bar">Classic Bar</option>
+                        <option value="Beer & Wine">Beer & Wine</option>
+                        <option value="Non-Alcoholic">Non-Alcoholic</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cateringStyle">Catering Style *</label>
+                    <select id="cateringStyle" required>
+                        <option value="">Select Catering Style</option>
+                        <option value="Standard Buffet">Standard Buffet</option>
+                        <option value="Hill Country Buffet">Hill Country Buffet</option>
+                        <option value="Family Style">Family Style</option>
+                        <option value="Plated">Plated</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="djOption">DJ Option *</label>
+                    <select id="djOption" required>
+                        <option value="">Select DJ Option</option>
+                        <option value="Premier Entertainment - Prospect House Package">Premier Entertainment - Prospect
+                            House Package</option>
+                        <option value="Byrne Rock - Ceremony & Reception Package">Byrne Rock - Ceremony & Reception
+                            Package</option>
+                    </select>
+                </div>
+
+                <div class="section-title" style="margin-top: 30px;">Floral Centerpiece Add-Ons (Optional)</div>
+
+                <div class="form-group">
+                    <label for="centerpieceStyle">Centerpiece Style</label>
+                    <select id="centerpieceStyle">
+                        <option value="">None</option>
+                        <option value="Trio of Candles w/ Greenery">Trio of Candles w/ Greenery ($95)</option>
+                        <option value="Six Bud Vases (Seasonal Florals)">Six Bud Vases (Seasonal Florals) ($100)
+                        </option>
+                        <option value="Petite Compotes">Petite Compotes ($125)</option>
+                        <option value="Low & Lush Arrangement">Low & Lush Arrangement ($185)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="centerpieceQty">Quantity</label>
+                    <input type="number" id="centerpieceQty" min="0" max="1000" placeholder="0">
+                    <div class="small-text">Recommended: 1 centerpiece per table of 8 guests for events over 125 guests
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="remarks">Remarks / Special Requests</label>
+                    <textarea id="remarks" rows="4" placeholder="Enter any special requests or notes..."></textarea>
+                </div>
+
+                <button type="button" class="submit-btn" onclick="submitForm()">Submit Estimate Request</button>
+            </div>
+
+            <!-- Output Section -->
+            <div class="output-section">
+                <div class="section-title">Estimate Summary</div>
+
+                <div class="note">
+                    <strong>Guest Count Validation:</strong>
+                    <span id="guestValidation" class="validation-check validation-ok">OK</span>
+                </div>
+
+                <div class="summary-section">
+                    <h3 style="margin-bottom: 15px; color: #000000;">Pricing Breakdown</h3>
+
+                    <div class="summary-item">
+                        <span class="label">Venue Rental</span>
+                        <span class="value" id="venueRental">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Planning Package</span>
+                        <span class="value" id="planning">$3,500.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Bar Total (with tax)</span>
+                        <span class="value" id="barTotal">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Catering Total</span>
+                        <span class="value" id="cateringTotal">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Rentals Total</span>
+                        <span class="value" id="rentalsTotal">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Floral Total (with tax)</span>
+                        <span class="value" id="floralTotal">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">DJ Total</span>
+                        <span class="value" id="djTotal">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Grounds Manager</span>
+                        <span class="value" id="groundsManager">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Cleaning Fee</span>
+                        <span class="value" id="cleaningFee">$300.00</span>
+                    </div>
+                </div>
+
+                <div class="summary-section" style="background: rgb(235, 236, 240);">
+                    <h3 style="margin-bottom: 15px; color: #000000;">Detailed Calculations</h3>
+
+                    <div class="summary-item">
+                        <span class="label">Total Guest Count (Bar)</span>
+                        <span class="value" id="totalGuestBar">0</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Bar Rate ($/adult/hr)</span>
+                        <span class="value" id="barRate">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Bar Subtotal (adults, after discount)</span>
+                        <span class="value" id="barSubtotal">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Youth Fee</span>
+                        <span class="value" id="youthFee">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Bar Before Minimum</span>
+                        <span class="value" id="barBeforeMin">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Bar Minimum</span>
+                        <span class="value" id="barMinimum">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Bar Subtotal After Min</span>
+                        <span class="value" id="barSubtotalAfterMin">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Bar Tax (8.25%)</span>
+                        <span class="value" id="barTax">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Floral Tier</span>
+                        <span class="value" id="floralTier">-</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Floral Base</span>
+                        <span class="value" id="floralBase">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Floral Add-Ons</span>
+                        <span class="value" id="floralAddOns">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Floral Subtotal</span>
+                        <span class="value" id="floralSubtotal">$0.00</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Floral Tax (8.25%)</span>
+                        <span class="value" id="floralTax">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="total-section">
+                    <div class="total-label">Estimated Total</div>
+                    <div class="total-value" id="estimatedTotal">$0.00</div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        // Show modal when page loads
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('popupModal').classList.add('active');
-            }, 500); // Slight delay for better UX
-        });
-
-        // Close modal function
-        function closeModal() {
-            document.getElementById('popupModal').classList.remove('active');
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('popupModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // Close modal on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
+
 </html>
