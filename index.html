@@ -12,288 +12,388 @@
     <!-- Favicons -->
     <link href="./icon.jpg" rel="icon">
     <link href="./icon.jpg" rel="apple-touch-icon">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
 <base target="_blank">
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Prospect House All-Inclusive Estimate Builder</h1>
-            <p>Fill in the fields below. All calculations update automatically.</p>
-            <p style="font-size: 0.9em; margin-top: 5px;">(Off-Peak dates receive 10% off bar packages; Saturdays
-                excluded)</p>
+    <!-- Navigation Bar -->
+    <nav class="prospect-nav">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#" class="nav-logo">
+                <img src="./logo.svg" alt="Prospect House">
+            </a>
+
+            <!-- Main Navigation -->
+            <ul class="nav-menu">
+                <!-- WEDDINGS Dropdown -->
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">
+                        WEDDINGS
+                        <span class="dropdown-icon">▼</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://www.prospecthousetx.com/the-prospect-house-experience" class="dropdown-link">PRICING</a></li>
+                        <li><a href="https://www.prospecthousetx.com/all-inclusive-weddings" class="dropdown-link">ALL-INCLUSIVE</a></li>
+                        <li><a href="https://www.prospecthousetx.com/rehearsal-dinner" class="dropdown-link">REHEARSAL DINNERS</a></li>
+                    </ul>
+                </li>
+
+                <!-- PRIVATE EVENTS Dropdown -->
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">
+                        PRIVATE EVENTS
+                        <span class="dropdown-icon">▼</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://www.prospecthousetx.com/private-events" class="dropdown-link">PRIVATE EVENTS</a></li>
+                        <li><a href="https://www.prospecthousetx.com/hosted-events" class="dropdown-link">PH HOSTED EVENTS</a></li>
+                        <li><a href="https://www.prospecthousetx.com/rehearsal-dinnerdf8f22ef" class="dropdown-link">REHEARSAL DINNER</a></li>
+                    </ul>
+                </li>
+
+                <!-- PLANNING -->
+                <li class="nav-item">
+                    <a href="https://www.prospecthousetx.com/in-house-planning" class="nav-link">PLANNING</a>
+                </li>
+
+                <!-- FLORAL -->
+                <li class="nav-item">
+                    <a href="https://www.prospecthousetx.com/native-bloom-floral-design" class="nav-link">FLORAL</a>
+                </li>
+
+                <!-- GALLERIES Dropdown -->
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">
+                        GALLERIES
+                        <span class="dropdown-icon">▼</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://www.prospecthousetx.com/gallery" class="dropdown-link">PHOTO GALLERY</a></li>
+                        <li><a href="https://www.prospecthousetx.com/video-gallery" class="dropdown-link">VIDEO GALLERY</a></li>
+                    </ul>
+                </li>
+
+                <!-- RESOURCES Dropdown -->
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">
+                        RESOURCES
+                        <span class="dropdown-icon">▼</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://www.prospecthousetx.com/resources" class="dropdown-link">RENTAL INFORMATION</a></li>
+                        <li><a href="https://www.prospecthousetx.com/guest-information" class="dropdown-link">GUEST INFORMATION</a></li>
+                        <li><a href="https://www.prospecthousetx.com/where-to-stay" class="dropdown-link">WHERE TO STAY</a></li>
+                        <li><a href="https://www.prospecthousetx.com/blog7ddfa67a" class="dropdown-link">BLOG</a></li>
+                        <li><a href="https://www.prospecthousetx.com/press" class="dropdown-link">PRESS</a></li>
+                        <li><a href="https://www.prospecthousetx.com/our-team" class="dropdown-link">OUR TEAM</a></li>
+                        <li><a href="https://www.prospecthousetx.com/join-the-team" class="dropdown-link">JOIN THE TEAM</a></li>
+                    </ul>
+                </li>
+
+                <!-- CONTACT -->
+                <li class="nav-item">
+                    <a href="https://www.prospecthousetx.com/contact" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+
+            <!-- Schedule a Tour Button -->
+            <a href="https://www.prospecthousetx.com/contact" class="schedule-btn">SCHEDULE A TOUR</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+    </nav>
 
-        <div class="content">
-            <!-- Input Section -->
-            <div class="input-section">
-                <div class="section-title">Event Details</div>
-
-                <div class="form-group">
-                    <label for="eventDate">Event Date *</label>
-                    <input type="date" id="eventDate" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="season">Season</label>
-                    <input type="text" id="season" readonly placeholder="Auto-populated from date">
-                </div>
-
-                <div class="form-group">
-                    <label for="dayType">Day Type (for venue pricing)</label>
-                    <input type="text" id="dayType" readonly placeholder="Auto-populated from date">
-                </div>
-
-                <div class="form-group">
-                    <label for="guestCount">Guest Count *</label>
-                    <select id="guestCount" required>
-                        <option value="">Select Guest Count</option>
-                        <option value="50">50</option>
-                        <option value="75">75</option>
-                        <option value="100">100</option>
-                        <option value="125">125</option>
-                        <option value="150">150</option>
-                        <option value="175">175</option>
-                        <option value="200">200</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="barHours">Bar Hours *</label>
-                    <select id="barHours" required>
-                        <option value="">Select Bar Hours</option>
-                        <option value="4">4</option>
-                        <option value="4.5">4.5</option>
-                        <option value="5">5</option>
-                        <option value="5.5">5.5</option>
-                        <option value="6">6</option>
-                    </select>
-                </div>
-
-                <div class="optional-group">
-                    <label style="font-weight: 700; margin-bottom: 15px; display: block;">Guest Breakdown
-                        (Optional)</label>
-
-                    <div class="form-group">
-                        <label for="adults21">Adults 21+ (optional)</label>
-                        <input type="number" id="adults21" min="0" placeholder="Leave blank to use total guest count">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="youth620">Youth 6-20 (optional)</label>
-                        <input type="number" id="youth620" min="0" placeholder="0">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="kids5">Kids <5 (optional)</label>
-                                <input type="number" id="kids5" min="0" placeholder="0">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="barPackage">Bar Package *</label>
-                    <select id="barPackage" required>
-                        <option value="">Select Bar Package</option>
-                        <option value="Premium Full Bar">Premium Full Bar</option>
-                        <option value="Signature Bar">Signature Bar</option>
-                        <option value="Classic Bar">Classic Bar</option>
-                        <option value="Beer & Wine">Beer & Wine</option>
-                        <option value="Non-Alcoholic">Non-Alcoholic</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="cateringStyle">Catering Style *</label>
-                    <select id="cateringStyle" required>
-                        <option value="">Select Catering Style</option>
-                        <option value="Standard Buffet">Standard Buffet</option>
-                        <option value="Hill Country Buffet">Hill Country Buffet</option>
-                        <option value="Family Style">Family Style</option>
-                        <option value="Plated">Plated</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="djOption">DJ Option *</label>
-                    <select id="djOption" required>
-                        <option value="">Select DJ Option</option>
-                        <option value="Premier Entertainment - Prospect House Package">Premier Entertainment - Prospect
-                            House Package</option>
-                        <option value="Byrne Rock - Ceremony & Reception Package">Byrne Rock - Ceremony & Reception
-                            Package</option>
-                    </select>
-                </div>
-
-                <div class="section-title" style="margin-top: 30px;">Floral Centerpiece Add-Ons (Optional)</div>
-
-                <div class="form-group">
-                    <label for="centerpieceStyle">Centerpiece Style</label>
-                    <select id="centerpieceStyle">
-                        <option value="">None</option>
-                        <option value="Trio of Candles w/ Greenery">Trio of Candles w/ Greenery ($95)</option>
-                        <option value="Six Bud Vases (Seasonal Florals)">Six Bud Vases (Seasonal Florals) ($100)
-                        </option>
-                        <option value="Petite Compotes">Petite Compotes ($125)</option>
-                        <option value="Low & Lush Arrangement">Low & Lush Arrangement ($185)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="centerpieceQty">Quantity</label>
-                    <input type="number" id="centerpieceQty" min="0" max="1000" placeholder="0">
-                    <div class="small-text">Recommended: 1 centerpiece per table of 8 guests for events over 125 guests
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="remarks">Remarks / Special Requests</label>
-                    <textarea id="remarks" rows="4" placeholder="Enter any special requests or notes..."></textarea>
-                </div>
-
-                <button type="button" class="submit-btn" onclick="submitForm()">Submit Estimate Request</button>
+    <!-- Main Content Container -->
+    <div class="main-content">
+        <div class="container">
+            <div class="header">
+                <h1>Prospect House All-Inclusive Estimate Builder</h1>
+                <p>Fill in the fields below. All calculations update automatically.</p>
+                <p style="font-size: 0.9em; margin-top: 5px;">(Off-Peak dates receive 10% off bar packages; Saturdays
+                    excluded)</p>
             </div>
 
-            <!-- Output Section -->
-            <div class="output-section">
-                <div class="section-title">Estimate Summary</div>
+            <div class="content">
+                <!-- Input Section -->
+                <div class="input-section">
+                    <div class="section-title">Event Details</div>
 
-                <div class="note">
-                    <strong>Guest Count Validation:</strong>
-                    <span id="guestValidation" class="validation-check validation-ok">OK</span>
+                    <div class="form-group">
+                        <label for="eventDate">Event Date *</label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="season">Season</label>
+                        <input type="text" id="season" readonly placeholder="Auto-populated from date">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dayType">Day Type (for venue pricing)</label>
+                        <input type="text" id="dayType" readonly placeholder="Auto-populated from date">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guestCount">Guest Count *</label>
+                        <select id="guestCount" required>
+                            <option value="">Select Guest Count</option>
+                            <option value="50">50</option>
+                            <option value="75">75</option>
+                            <option value="100">100</option>
+                            <option value="125">125</option>
+                            <option value="150">150</option>
+                            <option value="175">175</option>
+                            <option value="200">200</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="barHours">Bar Hours *</label>
+                        <select id="barHours" required>
+                            <option value="">Select Bar Hours</option>
+                            <option value="4">4</option>
+                            <option value="4.5">4.5</option>
+                            <option value="5">5</option>
+                            <option value="5.5">5.5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+
+                    <div class="optional-group">
+                        <label style="font-weight: 700; margin-bottom: 15px; display: block;">Guest Breakdown
+                            (Optional)</label>
+
+                        <div class="form-group">
+                            <label for="adults21">Adults 21+ (optional)</label>
+                            <input type="number" id="adults21" min="0" placeholder="Leave blank to use total guest count">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="youth620">Youth 6-20 (optional)</label>
+                            <input type="number" id="youth620" min="0" placeholder="0">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="kids5">Kids <5 (optional)</label>
+                                    <input type="number" id="kids5" min="0" placeholder="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="barPackage">Bar Package *</label>
+                        <select id="barPackage" required>
+                            <option value="">Select Bar Package</option>
+                            <option value="Premium Full Bar">Premium Full Bar</option>
+                            <option value="Signature Bar">Signature Bar</option>
+                            <option value="Classic Bar">Classic Bar</option>
+                            <option value="Beer & Wine">Beer & Wine</option>
+                            <option value="Non-Alcoholic">Non-Alcoholic</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cateringStyle">Catering Style *</label>
+                        <select id="cateringStyle" required>
+                            <option value="">Select Catering Style</option>
+                            <option value="Standard Buffet">Standard Buffet</option>
+                            <option value="Hill Country Buffet">Hill Country Buffet</option>
+                            <option value="Family Style">Family Style</option>
+                            <option value="Plated">Plated</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="djOption">DJ Option *</label>
+                        <select id="djOption" required>
+                            <option value="">Select DJ Option</option>
+                            <option value="Premier Entertainment - Prospect House Package">Premier Entertainment - Prospect
+                                House Package</option>
+                            <option value="Byrne Rock - Ceremony & Reception Package">Byrne Rock - Ceremony & Reception
+                                Package</option>
+                        </select>
+                    </div>
+
+                    <div class="section-title" style="margin-top: 30px;">Floral Centerpiece Add-Ons (Optional)</div>
+
+                    <div class="form-group">
+                        <label for="centerpieceStyle">Centerpiece Style</label>
+                        <select id="centerpieceStyle">
+                            <option value="">None</option>
+                            <option value="Trio of Candles w/ Greenery">Trio of Candles w/ Greenery ($95)</option>
+                            <option value="Six Bud Vases (Seasonal Florals)">Six Bud Vases (Seasonal Florals) ($100)
+                            </option>
+                            <option value="Petite Compotes">Petite Compotes ($125)</option>
+                            <option value="Low & Lush Arrangement">Low & Lush Arrangement ($185)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="centerpieceQty">Quantity</label>
+                        <input type="number" id="centerpieceQty" min="0" max="1000" placeholder="0">
+                        <div class="small-text">Recommended: 1 centerpiece per table of 8 guests for events over 125 guests
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="remarks">Remarks / Special Requests</label>
+                        <textarea id="remarks" rows="4" placeholder="Enter any special requests or notes..."></textarea>
+                    </div>
                 </div>
 
-                <div class="summary-section">
-                    <h3 style="margin-bottom: 15px; color: #000000;">Pricing Breakdown</h3>
+                <!-- Output Section -->
+                <div class="output-section">
+                    <div class="section-title">Estimate Summary</div>
 
-                    <div class="summary-item">
-                        <span class="label">Venue Rental</span>
-                        <span class="value" id="venueRental">$0.00</span>
+                    <div class="note">
+                        <strong>Guest Count Validation:</strong>
+                        <span id="guestValidation" class="validation-check validation-ok">OK</span>
                     </div>
 
-                    <div class="summary-item">
-                        <span class="label">Planning Package</span>
-                        <span class="value" id="planning">$3,500.00</span>
+                    <div class="summary-section">
+                        <h3 style="margin-bottom: 15px; color: #000000;">Pricing Breakdown</h3>
+
+                        <div class="summary-item">
+                            <span class="label">Venue Rental</span>
+                            <span class="value" id="venueRental">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Planning Package</span>
+                            <span class="value" id="planning">$3,500.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Bar Total (with tax)</span>
+                            <span class="value" id="barTotal">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Catering Total</span>
+                            <span class="value" id="cateringTotal">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Rentals Total</span>
+                            <span class="value" id="rentalsTotal">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Floral Total (with tax)</span>
+                            <span class="value" id="floralTotal">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">DJ Total</span>
+                            <span class="value" id="djTotal">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Grounds Manager</span>
+                            <span class="value" id="groundsManager">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Cleaning Fee</span>
+                            <span class="value" id="cleaningFee">$300.00</span>
+                        </div>
                     </div>
 
-                    <div class="summary-item">
-                        <span class="label">Bar Total (with tax)</span>
-                        <span class="value" id="barTotal">$0.00</span>
+                    <div class="summary-section" style="background: rgb(235, 236, 240);">
+                        <h3 style="margin-bottom: 15px; color: #000000;">Detailed Calculations</h3>
+
+                        <div class="summary-item">
+                            <span class="label">Total Guest Count (Bar)</span>
+                            <span class="value" id="totalGuestBar">0</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Bar Rate ($/adult/hr)</span>
+                            <span class="value" id="barRate">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Bar Subtotal (adults, after discount)</span>
+                            <span class="value" id="barSubtotal">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Youth Fee</span>
+                            <span class="value" id="youthFee">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Bar Before Minimum</span>
+                            <span class="value" id="barBeforeMin">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Bar Minimum</span>
+                            <span class="value" id="barMinimum">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Bar Subtotal After Min</span>
+                            <span class="value" id="barSubtotalAfterMin">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Bar Tax (8.25%)</span>
+                            <span class="value" id="barTax">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Floral Tier</span>
+                            <span class="value" id="floralTier">-</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Floral Base</span>
+                            <span class="value" id="floralBase">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Floral Add-Ons</span>
+                            <span class="value" id="floralAddOns">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Floral Subtotal</span>
+                            <span class="value" id="floralSubtotal">$0.00</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Floral Tax (8.25%)</span>
+                            <span class="value" id="floralTax">$0.00</span>
+                        </div>
                     </div>
 
-                    <div class="summary-item">
-                        <span class="label">Catering Total</span>
-                        <span class="value" id="cateringTotal">$0.00</span>
+                    <div class="total-section">
+                        <div class="total-label">Estimated Total</div>
+                        <div class="total-value" id="estimatedTotal">$0.00</div>
                     </div>
-
-                    <div class="summary-item">
-                        <span class="label">Rentals Total</span>
-                        <span class="value" id="rentalsTotal">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Floral Total (with tax)</span>
-                        <span class="value" id="floralTotal">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">DJ Total</span>
-                        <span class="value" id="djTotal">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Grounds Manager</span>
-                        <span class="value" id="groundsManager">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Cleaning Fee</span>
-                        <span class="value" id="cleaningFee">$300.00</span>
-                    </div>
-                </div>
-
-                <div class="summary-section" style="background: rgb(235, 236, 240);">
-                    <h3 style="margin-bottom: 15px; color: #000000;">Detailed Calculations</h3>
-
-                    <div class="summary-item">
-                        <span class="label">Total Guest Count (Bar)</span>
-                        <span class="value" id="totalGuestBar">0</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Bar Rate ($/adult/hr)</span>
-                        <span class="value" id="barRate">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Bar Subtotal (adults, after discount)</span>
-                        <span class="value" id="barSubtotal">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Youth Fee</span>
-                        <span class="value" id="youthFee">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Bar Before Minimum</span>
-                        <span class="value" id="barBeforeMin">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Bar Minimum</span>
-                        <span class="value" id="barMinimum">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Bar Subtotal After Min</span>
-                        <span class="value" id="barSubtotalAfterMin">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Bar Tax (8.25%)</span>
-                        <span class="value" id="barTax">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Floral Tier</span>
-                        <span class="value" id="floralTier">-</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Floral Base</span>
-                        <span class="value" id="floralBase">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Floral Add-Ons</span>
-                        <span class="value" id="floralAddOns">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Floral Subtotal</span>
-                        <span class="value" id="floralSubtotal">$0.00</span>
-                    </div>
-
-                    <div class="summary-item">
-                        <span class="label">Floral Tax (8.25%)</span>
-                        <span class="value" id="floralTax">$0.00</span>
-                    </div>
-                </div>
-
-                <div class="total-section">
-                    <div class="total-label">Estimated Total</div>
-                    <div class="total-value" id="estimatedTotal">$0.00</div>
+                    <button type="button" class="submit-btn" onclick="submitForm()">Submit Estimate Request</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="navbar.js"></script>
 </body>
 
 </html>

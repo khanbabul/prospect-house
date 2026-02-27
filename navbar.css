@@ -1,0 +1,342 @@
+/* ============================================
+   PROSPECT HOUSE NAVIGATION BAR
+   ============================================ */
+
+/* Navigation Container */
+.prospect-nav {
+    background: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 40px;
+}
+
+.nav-logo img {
+    height: 70px;
+    width: auto;
+    display: block;
+}
+
+/* Main Navigation Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Navigation Items */
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    color: #333333;
+    text-decoration: none;
+    font-family: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: #EDDDD8;
+}
+
+/* Dropdown Icon */
+.dropdown-icon {
+    font-size: 10px;
+    margin-top: 2px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item.has-dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    min-width: 280px;
+    padding: 20px 0;
+    margin-top: 0;
+    list-style: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border-top: 2px solid transparent;
+}
+
+.nav-item.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+}
+
+/* Dropdown Header (PRICING label) */
+.dropdown-header {
+    padding: 0 25px 10px;
+    color: #aaaaaa;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f5f5f5;
+    margin-bottom: 10px;
+    pointer-events: none;
+}
+
+/* Dropdown Links */
+.dropdown-link {
+    display: block;
+    padding: 12px 25px;
+    color: #666666;
+    text-decoration: none;
+    font-family: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.dropdown-link:hover {
+    color: #333333;
+    background-color: #EBECF0;
+    padding-left: 30px;
+}
+
+.dropdown-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #EDDDD8;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-link:hover::before {
+    opacity: 1;
+}
+
+/* Schedule a Tour Button */
+.schedule-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background-color: #EDDDD8;
+    color: #333333;
+    text-decoration: none;
+    font-family: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin-left: 30px;
+    flex-shrink: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.schedule-btn:hover {
+    background-color: #e0d0cb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+/* Mobile Menu Toggle */
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333333;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .nav-link {
+        padding: 12px 10px;
+        font-size: 12px;
+    }
+
+    .schedule-btn {
+        padding: 12px 20px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 0;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    .nav-link {
+        padding: 15px 0;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        min-width: 100%;
+        padding: 0 0 10px 20px;
+        background: #fafafa;
+        margin-top: 0;
+    }
+
+    .nav-item.dropdown-open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-header {
+        padding: 10px 0;
+        margin-top: 5px;
+    }
+
+    .dropdown-link {
+        padding: 10px 0;
+    }
+
+    .dropdown-link:hover {
+        padding-left: 10px;
+        background: transparent;
+    }
+
+    .dropdown-link::before {
+        display: none;
+    }
+
+    .schedule-btn {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .nav-logo img {
+        height: 40px;
+    }
+
+    .schedule-btn {
+        padding: 10px 16px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+}
+
+/* Body padding for fixed navbar */
+body {
+    padding-top: 80px;
+}
+
+@media (max-width: 992px) {
+    body {
+        padding-top: 80px;
+    }
+}
