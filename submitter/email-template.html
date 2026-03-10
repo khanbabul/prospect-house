@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+    <body style="margin: 0; padding: 0; font-family: 'Mulish', sans-serif; background-color: #f9f9f9;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td align="center" style="padding: 40px 0;">
+                    <table width="600" border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff; border: 1px solid #eeeeee;">
+                        <tr>
+                            <td align="center" style="padding: 40px 0; border-bottom: 1px solid #f0f0f0;">
+                                <h1 style="margin: 0; font-size: 24px; font-weight: 300; text-transform: uppercase; letter-spacing: 4px; color: #000;">PROSPECT HOUSE</h1>
+                                <p style="margin: 10px 0 0; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 2px;">Estimate Request Details</p>
+                            </td>
+                        </tr>
+                        <!-- <img src="https://prospecthousetx.vercel.app/assets/img/header-preview.jpg" alt="" style="width: 40%; height: auto;"> -->
+                        <img src="..//assets/img/header-preview.jpg" alt="" style="width: 40%; height: auto;">
+                        <tr>
+                            <td style="padding: 40px;">
+                                <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; border-bottom: 1px solid #000; padding-bottom: 5px;">Event Overview</h2>
+                                <table width="100%" style="font-size: 14px; color: #444;">
+                                    <tr><td style="padding: 8px 0;"><strong>Date:</strong></td><td align="right">${data.eventDate}</td></tr>
+                                    <tr><td style="padding: 8px 0;"><strong>Guests:</strong></td><td align="right">${data.guestCount}</td></tr>
+                                    <tr><td style="padding: 8px 0;"><strong>Catering Style:</strong></td><td align="right">${data.cateringStyle}</td></tr>
+                                </table>
+
+                                <h2 style="font-size: 18px; font-weight: 700; margin-top: 30px; margin-bottom: 20px; border-bottom: 1px solid #000; padding-bottom: 5px;">Financial Summary</h2>
+                                <!-- Selections -->
+                                <table width="100%" style="font-size: 14px; color: #444;">
+                                    <tr><td style="padding: 8px 0;"><strong>Bar:</strong></td><td align="right">${data.barPackage} (${data.barHours} hours)</td></tr>
+                                    <tr><td style="padding: 8px 0;"><strong>Catering:</strong></td><td align="right">${data.cateringStyle}</td></tr>
+                                    <tr><td style="padding: 8px 0;"><strong>DJ:</strong></td><td align="right">${data.djOption}</td></tr>
+                                    <tr><td style="padding: 8px 0;"><strong>Floral:</strong></td><td align="right">${floralString}</td></tr>
+                                </table>
+
+                                <table width="100%" style="background-color: #fcf8f7; padding: 20px;">
+                                    <tr>
+                                        <td style="font-size: 16px;"><strong>Estimated Total</strong></td>
+                                        <td align="right" style="font-size: 20px; font-weight: 700; color: #000;">${data.estimatedTotal}</td>
+                                    </tr>
+                                </table>
+                                
+                                <p style="font-size: 13px; color: #999; margin-top: 20px; font-style: italic;">
+                                    <strong>Remarks:</strong> ${data.remarks || "No additional notes provided."}
+                                </p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td align="center" style="padding: 30px; background-color: #EDDDD8; color: #000; font-size: 12px; letter-spacing: 1px;">
+                                <p>With 🩷 by <a href="https://devbabul.vercel.app" style="text-decoration: none; color: #000; font-weight: 600;">Babul Khan</a></p>
+                                <p><a href="https://prospecthousetx.vercel.app/" style="text-decoration: none; color: #000;">www.prospecthousetx.com</a></p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+    </html>
