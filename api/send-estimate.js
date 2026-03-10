@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     try {
         await transporter.sendMail({
             from: `"Estimate Builder" <${process.env.EMAIL_USER}>`,
-            to: "devbabulkhan@gmail.com", // Destination email
+            to: "pitpphase2@gmail.com", // Destination email
             subject: `New Estimate Request - ${formData.eventDate}`,
             html: generateEmailHTML(formData),
         });
@@ -30,4 +30,5 @@ export default async function handler(req, res) {
         console.error(error);
         return res.status(500).json({ success: false, message: 'Failed to send email.' });
     }
+
 }
