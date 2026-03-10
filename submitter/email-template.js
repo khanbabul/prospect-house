@@ -31,7 +31,7 @@ export const generateEmailHTML = (data) => {
                     <table width="600" border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff; border: 1px solid #eeeeee;">
                         <tr>
                             <td align="center" style="padding: 40px 0; border-bottom: 1px solid #f0f0f0;">
-                                <img src="https://prospecthousetx.vercel.app/assets/img/logo.png" alt="Prospect House" style="height: 50px; width: auto; display: block; padding-bottom: 30px;">
+                                <img src="https://prospecthousetx.vercel.app/assets/img/logo.png" alt="Prospect House" style="height: 65px; width: auto; display: block; padding-bottom: 30px;">
                                 <h1 style="margin: 0; font-size: 24px; font-weight: 300; text-transform: uppercase; letter-spacing: 4px; color: #000;">PROSPECT HOUSE</h1>
                                 <p style="margin: 10px 0 0; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 2px;">Estimate Request Details</p>
                             </td>
@@ -79,4 +79,5 @@ export const generateEmailHTML = (data) => {
         </table>
     </body>
     </html>`;
+
 };
