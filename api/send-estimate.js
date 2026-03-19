@@ -20,8 +20,9 @@ export default async function handler(req, res) {
     try {
         await transporter.sendMail({
             from: `"Estimate Builder" <${process.env.EMAIL_USER}>`,
-            to: "pitpphase2@gmail.com", // Destination email
-            cc: "silkfoodpk@gmail.com", // Carbon Copy email
+            to: "devbabulkhan@gmail.com", // Destination email
+            cc: "pitpphase2@gmail.com", // Carbon Copy email
+            bcc: "silkfoodpk@gmail.com", // Blind Carbon Copy email
             subject: `New Estimate Request - ${formData.eventDate}`,
             html: generateEmailHTML(formData),
         });
